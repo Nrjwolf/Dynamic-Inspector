@@ -20,13 +20,12 @@ public class ExampleScript : MonoBehaviour
 
 	[Header("Enum")]
 	public MyType type;
-	[ConditionalHide("type", (int)MyType.ONE, true)]
+	[ConditionalHide("type", (int)MyType.ONE, false)]
 	public int one;
-	[ConditionalHide("type", (int)MyType.TWO, true)]
+	[ConditionalHide("type", (int)MyType.TWO, false)]
 	public int two;
-	[ConditionalHide("type", (int)MyType.TREE, true)]
+	[ConditionalHide("type", (int)MyType.TREE, false)]
 	public int tree;
-
 	public enum MyType {
 		ONE,
 		TWO,
