@@ -4,9 +4,32 @@ using UnityEngine;
 
 public class ExampleScript : MonoBehaviour
 {
-	[System.Serializable] public class MyList { public List<int> list; }
-
+	[Header("Bool")]
     public bool showList;
+	// Attribute name, disable or hide, inverse
 	[ConditionalHide("showList", false, false)]
     public MyList myList;
+	[System.Serializable] public class MyList { public List<int> list; }
+
+	[Header("Two Bool variables")]
+	// Two attributes 
+	public bool bool1;
+	public bool bool2;
+	[ConditionalHide("bool1", ConditionalSourceField2 = "bool2")]
+	public float range = 0.0f;
+
+	[Header("Enum")]
+	public MyType type;
+	[ConditionalHide("type", (int)MyType.ONE, true)]
+	public int one;
+	[ConditionalHide("type", (int)MyType.TWO, true)]
+	public int two;
+	[ConditionalHide("type", (int)MyType.TREE, true)]
+	public int tree;
+
+	public enum MyType {
+		ONE,
+		TWO,
+		TREE
+	} 
 }

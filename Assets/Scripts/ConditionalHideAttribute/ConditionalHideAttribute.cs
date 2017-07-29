@@ -18,7 +18,7 @@ public class ConditionalHideAttribute : PropertyAttribute
     public int enumIndex;
 
     /**
-    * hideInInspector - если true = прячет содержимое, если false деактивирует содержимое
+    * hideInInspector - true = hide, false = deactivate
     *
     */
 
